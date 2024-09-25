@@ -17,6 +17,7 @@ import OrangeDiv from "./components/OrangeDiv";
 import PurpleDiv from "./components/PurpleDiv";
 import GreenDiv from "./components/GreenDiv";
 import BlueDiv from "./components/BlueDiv"
+import Footer from "./components/Footer";
 
 const App = () => {
   let imgs = [slide1, slide2];
@@ -51,6 +52,8 @@ const App = () => {
       <PurpleDiv />
       <GreenDiv />
       <BlueDiv />
+      {/* ANOTHER CREEPY SLIDE HERE */}
+      <Footer />
     </div>
   );
 };

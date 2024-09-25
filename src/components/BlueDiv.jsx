@@ -13,17 +13,17 @@ let images = [
 	hairCare,
 ]
 
-const blueDiv = () => {
+const BlueDiv = () => {
 	return (
 		<div className={`flex flex-col justify-center items-center mt-10`} >
-			<img className={`h-80`} src={theBigOne} alt="" />
-			<div className={`grid grid-cols-4 grid-rows-2`} >
+			<img className={`w-fit`} src={theBigOne} alt="" />
+			<div className={`flex justify-start items-center overflow-scroll`} >
 				{images.map((image) => {
-					return <img className={`h-[17rem] m-4`} src={image} alt="" />
+					return <img className={`h-[7rem] justify-items-center md:h-[17rem] mx-4`} src={image} alt="" />
 				})}
 			</div>
 		</div>
 	)
 }
 
-export default blueDiv
+export default BlueDiv

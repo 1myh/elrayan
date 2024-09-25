@@ -6,13 +6,23 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping
 
 const Header = () => {
 	return (
-		<div className={`w-full text-white py-8 bg-indigo-500 flex justify-center align-baseline`} >
-			<img className={`px-5 h-10`} src={elrayan} alt="" />
-			<input className={`rounded-lg w-[55rem]`} type="text" />
-			<button className={`px-5 flex justify-center items-center cursor-pointer`} ><FontAwesomeIcon color='white' className={`h-5 pr-2`} icon={faUser} />Sign in or Sign up</button>
-			<br />
-			<button><FontAwesomeIcon className={`h-5`} icon={faCartShopping} /></button>
-		</div>
+		<>
+			<div className={`w-full flex flex-col md:hidden justify-center text-white px-5 pt-3 pb-5 bg-indigo-500 items-center`} >
+				<img className={`px-5 w-fit mb-3`} src={elrayan} alt="" />
+				<input className={`rounded-md xl:w-[55rem] lg:w-[30rem] h-10 w-full text-black px-3`} type="text" />
+				<button className={`px-5 md:flex justify-center items-center lg:text-[0.7rem] xl:text-[1rem] hidden cursor-pointer`} ><FontAwesomeIcon color='white' className={`xl:h-5 lg:h-3 pr-2`} icon={faUser} />Sign in or Sign up</button>
+				<br />
+				<button><FontAwesomeIcon className={`xl:h-5 lg:h-3 md:flex hidden`} icon={faCartShopping} /></button>
+			</div>
+
+			<div className={`w-full md:flex hidden justify-center text-white px-5 pt-3 pb-5 bg-indigo-500 items-center`} >
+				<img className={`px-5 w-fit mb-3`} src={elrayan} alt="" />
+				<input className={`rounded-md xl:w-[55rem] lg:w-[30rem] h-10 w-full text-black px-3`} type="text" />
+				<button className={`px-5 md:flex justify-center items-center xl:text-[1rem] hidden cursor-pointer`} ><FontAwesomeIcon color='white' className={`xl:h-5 lg:h-3 pr-2`} icon={faUser} />Sign in or Sign up</button>
+				<br />
+				<button><FontAwesomeIcon className={`xl:h-5 lg:h-3 md:flex hidden`} icon={faCartShopping} /></button>
+			</div>
+		</>
 	)
 }
 
