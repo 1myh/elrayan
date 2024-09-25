@@ -18,6 +18,7 @@ import PurpleDiv from "./components/PurpleDiv";
 import GreenDiv from "./components/GreenDiv";
 import BlueDiv from "./components/BlueDiv"
 import Footer from "./components/Footer";
+import EvenMoreSliders from "./components/EvenMoreSliders";
 
 const App = () => {
   let imgs = [slide1, slide2];
@@ -43,7 +44,7 @@ const App = () => {
   ]; */
 
   return (
-    <div className={`bg-red h-screen w-screen`}>
+    <div className={`flex justify-center items-center flex-col`}>
       <Header />
       <Sections />
       <Slider images={imgs} />
@@ -52,7 +53,7 @@ const App = () => {
       <PurpleDiv />
       <GreenDiv />
       <BlueDiv />
-      {/* ANOTHER CREEPY SLIDE HERE */}
+      <EvenMoreSliders />
       <Footer />
     </div>
   );

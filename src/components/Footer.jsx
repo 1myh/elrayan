@@ -24,7 +24,7 @@ let onlnieShopping = [
 
 const Footer = () => {
 	return (
-		<div className={`flex justify-around items-start w-full bg-slate-100 py-20`} >
+		<div className={`flex justify-around items-start w-full bg-gray-100 mt-20 py-20`} >
 
 			<div className={`lg:flex justify-center items-start hidden w-full`} >
 				<div className={`flex flex-col max-w-[16rem] mx-5 justify-center items-start`} >
@@ -76,7 +76,7 @@ const Footer = () => {
 				<p className={`my-3 text-indigo-500 cursor-pointer`} ><FontAwesomeIcon className={`mr-3`} icon={faEnvelope} /> online@elryan.com</p>
 				<div className={`flex justify-center items-center my-5`} >
 				{socials.map((link) => {
-							return <img className={`h-10 mr-5 cursor-pointer`} src={link} alt="" />
+							return <img className={`h-10 mx-3 cursor-pointer`} src={link} alt="" />
 						})}
 				</div>
 			</div>
