@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import theBigOne from "../images/orange/theBigOne.jpg"
 import mobiles from "../images/orange/mobiles.jpg"
 import computing from "../images/orange/computing.jpg"
@@ -22,6 +22,7 @@ import xbox from "../images/orange/xbox.png"
 import charger from "../images/orange/charger.jpg"
 import airpodsMax from "../images/orange/airpodsMax.jpg"
 import hwaweiWatch from "../images/orange/hwaweiWatch.jpg"
+import theSmallOne from "../images/orange/theSmallOne.jpg"
 
 let images = [
 	mobiles,
@@ -34,44 +35,26 @@ let images = [
 	headphones
 ]
 
-/* let wtf = [
-	{
-		name: "our picks for mobiles",
-		items: {
-			{item: "s24", image: },
-			{item: "", image: ""},
-			{item: "", image: ""},
-		}
-	},
-	{
-		name: "",
-		items: {
-			{item: "", image: ""},
-			{item: "", image: ""},
-			{item: "", image: ""},
-		}
-	},
-	{
-		name: "",
-		items: {
-			{item: "", image: ""},
-			{item: "", image: ""},
-			{item: "", image: ""},
-		}
-	},
-	{
-		name: "",
-		items: {
-			{item: "", image: ""},
-			{item: "", image: ""},
-			{item: "", image: ""},
-		}
-	},
-] */
 const OrangeDiv = () => {
+	let [heroImage, setHeroImage] = useState(window.innerWidth > 720 ? theBigOne : theSmallOne)
+
+	let handleHeroImage = () => {
+		if(window.innerWidth > 720) {
+			setHeroImage(theBigOne)
+		} else {
+			setHeroImage(theSmallOne)
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', handleHeroImage)
+
+		return () =>  window.removeEventListener('resize', handleHeroImage)
+	}, [])
+
 	return (
 		<div className={`flex flex-col justify-center items-center mt-10`} >
-			<img className={`h-full`} src={theBigOne} alt="" />
+			<img className={`xl:w-[75rem]`} src={heroImage} alt="" />
 			<div className={`grid justify-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2`} >
 				{images.map((image) => {
 					return <img className={`h-fit md:h-[8.5rem] lg:h-[10rem] xl:h-[8.5rem] mx-4`} src={image} alt="" />
