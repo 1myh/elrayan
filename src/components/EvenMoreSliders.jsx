@@ -34,7 +34,7 @@ const EvenMoreSliders = () => {
 	return (
 		<div className={`flex overflow-scroll justify-start items-center w-88 xl:w-[70rem] mt-20`} >
 			{corps.map((corp) => {
-				return <img className={` h-36 xl:h-[10rem] mx-4`} src={corp} alt="" />
+				return <img className={` h-36 xl:size-[10rem] mx-4`} src={corp} alt="" />
 			})}
 		</div>
 	)
