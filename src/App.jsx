@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Sections from "./components/Sections";
 import Slider from "./components/Slider";
 import slide1 from "./images/slide1.jpg";
 import slide2 from "./images/slide2.jpg";
+import slide3 from "./images/slide3.jpg";
+import mdSlide1 from "./images/mdSlide1.jpg"
+import mdSlide2 from "./images/mdSlide2.jpg"
+import mdSlide3 from "./images/mdSlide3.jpg"
 import specialOffers from "./images/percent.jpg";
 import mobile from "./images/specialOffers.jpg";
 import gaming from "./images/gaming.jpg";
@@ -21,7 +25,7 @@ import Footer from "./components/Footer";
 import EvenMoreSliders from "./components/EvenMoreSliders";
 
 const App = () => {
-  let imgs = [slide1, slide2];
+  let [imgs, setImgs] = useState(window.innerWidth > 1200 ? [slide1, slide2, slide3] : [mdSlide1, mdSlide2, mdSlide3]);
   let tinyImgs = [
     {name: "specialOffers", image: specialOffers},
     {name: "mobile", image: mobile},
@@ -43,11 +47,24 @@ const App = () => {
     {name: makeup, id: 8},
   ]; */
 
+  let handleHeroImage = () => {
+    if (window.innerWidth > 1200) {
+      setImgs([slide1, slide2, slide3])
+    } else {
+      setImgs([mdSlide1, mdSlide2, mdSlide3])
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleHeroImage)
+
+    return () => window.removeEventListener('resize', handleHeroImage)
+  }, [])
+
   return (
     <div className={`flex justify-center items-center flex-col`}>
       <Header />
       <Sections />
-      <Slider images={imgs} />
+      <Slider images={imgs} autoSlide={true} slideEvery={5000} />
       <SmallerSlider images={tinyImgs} />
       <OrangeDiv />
       <PurpleDiv />
